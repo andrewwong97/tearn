@@ -14,3 +14,13 @@ Run the app locally by navigating to the inner tearn directory (<code>tearn/tear
 | React | https://facebook.github.io/react/ for our frontend views |
 | MongoDB | https://www.mongodb.com/ Our database |
 
+# Updating the Repo
+
+If you want to make any major change to the app (e.g. adding a feature), please read up on <a href="https://www.atlassian.com/git/tutorials/using-branches"><code>git branches</code></a>.
+
+Any minor changes like updating the <code>README</code> can be pushed to <code>master</code>.
+
+Please make sure to commit <strong>descriptively</strong> and start each <code>git commit</code> with a <strong>capital</strong> letter. 
+<code>Example: git commit -m "Adding Andrew as an admin"</code>
+
+# Thanks for contributing!

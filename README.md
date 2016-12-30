@@ -1,0 +1,2 @@
+# tearn
+Tearn meteor app

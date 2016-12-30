@@ -2,6 +2,8 @@
 
 Welcome to the Tearn app!
 
+First downlaoad meteor from <a href="meteor.com">meteor.com</a>.
+
 Get started by <code>git clone https://github.com/andrewwong97/tearn.git</code> to your local machine. 
 
 Run the app locally by navigating to the inner tearn directory (<code>tearn/tearn</code>). Then <code>meteor run</code>. 

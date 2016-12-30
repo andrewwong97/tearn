@@ -2,7 +2,7 @@
 
 Welcome to the Tearn app!
 
-First downlaoad meteor from <a href="meteor.com">meteor.com</a>.
+First download meteor from <a href="meteor.com">meteor.com</a>.
 
 Get started by <code>git clone https://github.com/andrewwong97/tearn.git</code> to your local machine. 
 

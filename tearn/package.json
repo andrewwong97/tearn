@@ -2,7 +2,8 @@
   "name": "tearn",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "test": "cd client"
   },
   "dependencies": {
     "babel-runtime": "^6.18.0",

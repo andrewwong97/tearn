@@ -1,7 +1,4 @@
 language: node_js
 node_js:
   - "node"
-  - "6.x"
-  - "5.x"
-  - "4.x"
 script: "cd tearn && npm test"

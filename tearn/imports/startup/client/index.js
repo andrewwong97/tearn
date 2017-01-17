@@ -1,3 +1,4 @@
-// Import client startup through a single index entry point
+// Javascript entry point from the client-side
 
 import './routes.js';
+import './accounts.js';

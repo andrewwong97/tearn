@@ -1,3 +1,3 @@
 import './main.html';
-import './bootstrap.css';
-import './font-awesome.min.css';
+import '../stylesheets/font-awesome.min.css';
+import '../stylesheets/bulma.css';

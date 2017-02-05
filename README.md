@@ -14,9 +14,10 @@ Run the app locally by navigating to the inner tearn directory (<code>tearn/tear
 
 | Package | Details |
 |----|----|
-| Meteor | https://www.meteor.com/ |
-| React | https://facebook.github.io/react/ for our frontend views |
-| MongoDB | https://www.mongodb.com/ Our database |
+| Meteor | https://www.meteor.com/ full stack framework |
+| Blaze | http://blazejs.org/ for view layer |
+| Bulma | http://bulma.io/ for grid and styles |
+| MongoDB | https://www.mongodb.com/ for our database |
 
 # Contributing
 

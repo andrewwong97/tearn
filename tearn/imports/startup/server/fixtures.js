@@ -1,34 +1,23 @@
-// Fill the DB with example data on startup
-
 import { Meteor } from 'meteor/meteor';
-import { Links } from '../../api/links/links.js';
+import { Roles } from 'meteor/alanning:roles';
+import { Accounts } from 'meteor/accounts-base';
 
-Meteor.startup(() => {
-  // if the Links collection is empty
-  if (Links.find().count() === 0) {
-    const data = [
-      {
-        title: 'Do the Tutorial',
-        url: 'https://www.meteor.com/try',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Follow the Guide',
-        url: 'http://guide.meteor.com',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Read the Docs',
-        url: 'https://docs.meteor.com',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Discussions',
-        url: 'https://forums.meteor.com',
-        createdAt: new Date(),
-      },
-    ];
+if (!Meteor.isProduction) {
+  const users = [{
+    email: 'admin@admin.com',
+    password: 'password',
+    profile: {
+      name: { first: 'Carl', last: 'Winslow' },
+    },
+    roles: ['admin'],
+  }];
 
-    data.forEach(link => Links.insert(link));
-  }
-});
+  users.forEach(({ email, password, profile, roles }) => {
+    const userExists = Meteor.users.findOne({ 'emails.address': email });
+
+    if (!userExists) {
+      const userId = Accounts.createUser({ email, password, profile });
+      Roles.addUsersToRoles(userId, roles);
+    }
+  });
+}

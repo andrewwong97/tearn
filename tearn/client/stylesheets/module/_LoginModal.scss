@@ -1,0 +1,16 @@
+.LoginModal {
+  .btn.btn-primary {
+    background-color: $primary-color;
+    color: $white;
+    border-color: transparent;
+    transition: background-color 200ms ease-in-out;
+  }
+}
+
+.Modal {
+  font-family: $font-stack;
+}
+
+.modal-container {
+  font-family: $font-stack;
+}

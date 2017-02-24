@@ -1,3 +1,34 @@
-.Signup form + p {
-  margin-top: 20px;
+$primary-color: #3498db;
+$white: #fff;
+
+.Signup {
+  font-family: $font-stack;
+  form + p {
+    margin-top: 20px;
+  }
+  label {
+    color: #2f2f2f;
+    font-weight: 500;
+  }
+  input {
+    box-shadow: 0 0 0 0 #fff;
+    border-radius: 2px;
+    border-color: #eee;
+  }
+
+  input:active, input:focus {
+    border: 1px solid $primary-color;
+    box-shadow: 0 0 0 0 #fff;
+  }
+
+  .btn.btn-success {
+    background-color: $primary-color;
+    color: $white;
+    border-color: transparent;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  .btn.btn-success:hover {
+    background-color: #4da6ff;
+  }
 }

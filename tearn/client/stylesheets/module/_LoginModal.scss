@@ -1,16 +1,20 @@
 .LoginModal {
   .btn.btn-primary {
-    background-color: $primary-color;
-    color: $white;
+    background-color: $white;
+    color: $primary-color;
     border-color: transparent;
     transition: background-color 200ms ease-in-out;
+    margin-right: .5em;
   }
+  display: inline-block;
+  text-align: left;
 }
 
 .Modal {
   font-family: $font-stack;
 }
 
-.modal-container {
+.modal-container, .modal-header, .modal-body {
   font-family: $font-stack;
+  color: #2f2f2f;
 }

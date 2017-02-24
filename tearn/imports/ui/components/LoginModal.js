@@ -17,12 +17,12 @@ export default class LoginModal extends React.Component {
 
     return (
       <div className="LoginModal">
-        <div className="modal-container" style={{height: 200, 'margin-top': '.5em'}}>
+        <div className="modal-container">
           <Button
             bsStyle="primary"
             onClick={() => this.setState({ show: true})}
           >
-            Sign Up
+            Get Started
           </Button>
 
           <Modal
@@ -33,9 +33,9 @@ export default class LoginModal extends React.Component {
             style={{weight:300}}
           >
             <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title">Sign Up</Modal.Title>
+              <Modal.Title className="text-center" id="contained-modal-title">Sign Up</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className="text-left">
               <Signup />
             </Modal.Body>
             <Modal.Footer>

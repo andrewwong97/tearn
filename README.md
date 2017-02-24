@@ -8,15 +8,17 @@ First download meteor from <a href="meteor.com">meteor.com</a>.
 
 Get started by <code>git clone https://github.com/andrewwong97/tearn.git</code> to your local machine. 
 
-Run the app locally by navigating to the inner tearn directory (<code>tearn/tearn</code>). Then <code>meteor run</code>. 
+Install dependencies by running <code>meteor npm install</code> inside your project folder (<code>tearn/tearn</code>).
+
+Run the app locally by navigating to the project, then run <code>meteor</code>. 
 
 # Our Stack
 
 | Package | Details |
 |----|----|
 | Meteor | https://www.meteor.com/ full stack framework |
-| Blaze | http://blazejs.org/ for view layer |
-| Bulma | http://bulma.io/ for grid and styles |
+| React | https://facebook.github.io/react/ for view layer |
+| React-Bootstrap | https://react-bootstrap.github.io/ for grid |
 | MongoDB | https://www.mongodb.com/ for our database |
 
 # Contributing

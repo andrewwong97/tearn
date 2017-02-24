@@ -1,4 +1,4 @@
 language: node_js
 node_js:
   - "node"
-script: "cd tearn && meteor test"
+script: "cd tearn && meteor test --driver-package practicalmeteor:mocha --port 5000"

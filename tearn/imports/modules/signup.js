@@ -48,6 +48,11 @@ const validate = () => {
         required: true,
         minlength: 6,
       },
+      year: {
+        required: true,
+        digits: true,
+        maxlength: 4,
+      },
     },
     messages: {
       firstName: {
@@ -63,6 +68,9 @@ const validate = () => {
       password: {
         required: 'Need a password here.',
         minlength: 'Use at least six characters, please.',
+      },
+      year: {
+        required: 'Enter a year please.',
       },
     },
     submitHandler() { signup(); },

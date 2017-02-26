@@ -63,6 +63,15 @@ export default class Signup extends React.Component {
                   placeholder="Password"
                 />
               </FormGroup>
+              <FormGroup>
+                <ControlLabel>Graduation Year</ControlLabel>
+                <FormControl
+                  type="text"
+                  ref="year"
+                  name="year"
+                  placeholder="Your Graduation Year"
+                />
+              </FormGroup>
               <Button type="submit" bsStyle="success">Sign Up</Button>
             </form>
             <p style={{'font-size':'.9em'}}>Already have an account? <Link to="/login">Log In</Link>.</p>

@@ -15,6 +15,12 @@ const getUserData = () => ({
       first: document.querySelector('[name="firstName"]').value,
       last: document.querySelector('[name="lastName"]').value,
     },
+    year: {
+      year: document.querySelector('[name="year"]').value,
+    },
+    credit: {
+      credit: "200",
+    },
   },
 });
 
@@ -51,6 +57,7 @@ const validate = () => {
       year: {
         required: true,
         digits: true,
+        minlength: 4,
         maxlength: 4,
       },
     },

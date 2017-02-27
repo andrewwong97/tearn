@@ -22,15 +22,4 @@
     border: 1px solid $primary-color;
     box-shadow: 0 0 0 0 #fff;
   }
-
-  .btn.btn-success {
-    background-color: $primary-color;
-    color: $white;
-    border-color: transparent;
-    transition: background-color 200ms ease-in-out;
-  }
-
-  .btn.btn-success:hover {
-    background-color: #4da6ff;
-  }
 }

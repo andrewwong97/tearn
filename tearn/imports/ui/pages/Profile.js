@@ -22,7 +22,7 @@ export default class Profile extends React.Component {
   }
 
   getView() {
-    return this.state.activeKey == 1 ? <Teacher name={'I am a Teacher!'} /> : <Learner name={'I am a Learner!'} />
+    return this.state.activeKey == 1 ? <Teacher name={''} /> : <Learner name={''} />
   }
 
    handleSelect(selectedKey) {

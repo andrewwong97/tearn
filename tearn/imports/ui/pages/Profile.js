@@ -2,12 +2,15 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Image, Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router';
+import Teacher from './Teacher';
+import Learner from './Learner';
 
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       activeKey: 1,
+      user: Meteor.user()
     };
   }
 
@@ -15,6 +18,10 @@ export default class Profile extends React.Component {
     const user = Meteor.user();
     const name = user && user.profile ? user.profile.name : '';
     return user ? `${name.first} ${name.last}` : 'My Profile';
+  }
+
+  getView() {
+    return this.state.activeKey == 1 ? <Teacher name={'I am a Teacher!'} /> : <Learner name={'I am a Learner!'} />
   }
 
    handleSelect(selectedKey) {
@@ -35,6 +42,7 @@ export default class Profile extends React.Component {
           <br></br>
         </div>
         <div className="profile-img"></div>
+        {this.getView()}
       </div>
     );
   }

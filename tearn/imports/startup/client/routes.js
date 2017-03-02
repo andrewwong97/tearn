@@ -16,6 +16,7 @@ import RecoverPassword from '../../ui/pages/RecoverPassword.js';
 import ResetPassword from '../../ui/pages/ResetPassword.js';
 import Signup from '../../ui/pages/Signup.js';
 import Profile from '../../ui/pages/Profile.js';
+import Jobs from '../../ui/pages/Jobs.js';
 
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
@@ -27,11 +28,13 @@ const authenticate = (nextState, replace) => {
 };
 
 Meteor.startup(() => {
-  render(
+  setTimeout(() => {
+    render(
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } />
         <Route name="myProfile" path="/profile" component={ Profile } onEnter={ authenticate } />
+        <Route name="JobView" path="/jobs" component={ Jobs } onEnter={ authenticate } />
         <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
         <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
         <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
@@ -44,5 +47,5 @@ Meteor.startup(() => {
       </Route>
     </Router>,
     document.getElementById('react-root')
-  );
+    );}, 400)
 });

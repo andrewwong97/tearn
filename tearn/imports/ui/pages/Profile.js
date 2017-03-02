@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import Teacher from './Teacher';
 import Learner from './Learner';
 
+
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -17,8 +18,6 @@ export default class Profile extends React.Component {
   getUsername() {
     const user = Meteor.user();
     const name = user && user.profile ? user.profile.name : '';
-    return user ? `${name.first} ${name.last}` : 'My Profile';
-  }
 
   getView() {
     return this.state.activeKey == 1 ? <Teacher name={'I am a Teacher!'} /> : <Learner name={'I am a Learner!'} />
@@ -30,7 +29,8 @@ export default class Profile extends React.Component {
       });
    }
 
-  render() {
+    render() {
+    console.log(this.getUsername() == 'undefined undefined');
     return (
       <div className="Profile">
         <div className="profile-container">

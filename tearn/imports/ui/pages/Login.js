@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Row, Col, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
-import handleLogin from '../../modules/login';
+import handleLogin from '../../modules/login.js';
 
 export default class Login extends React.Component {
   componentDidMount() {

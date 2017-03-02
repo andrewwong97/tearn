@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'Circular Std';
-  src: url('../fonts/CircularStd-Book.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/CircularStd-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+  src: url('../../public/fonts/CircularStd-Book.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../public/fonts/CircularStd-Book.ttf')  format('truetype'); /* Safari, Android, iOS */
+  font-weight: normal;
 }
 
 $font-stack: "Circular Std", "Source Sans Pro", "Helvetica", sans-serif;

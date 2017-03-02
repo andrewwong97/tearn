@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Image, Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router';
+import Teacher from './Teacher';
+import Learner from './Learner';
 
 
 export default class Profile extends React.Component {
@@ -9,6 +11,7 @@ export default class Profile extends React.Component {
     super(props);
     this.state = {
       activeKey: 1,
+      user: Meteor.user()
     };
   }
 
@@ -16,8 +19,10 @@ export default class Profile extends React.Component {
     const user = Meteor.user();
     const name = user && user.profile ? user.profile.name : '';
 
-    return name.first + ' '+ name.last;
+  getView() {
+    return this.state.activeKey == 1 ? <Teacher name={'I am a Teacher!'} /> : <Learner name={'I am a Learner!'} />
   }
+
    handleSelect(selectedKey) {
       this.setState({
         activeKey: selectedKey
@@ -29,7 +34,7 @@ export default class Profile extends React.Component {
     return (
       <div className="Profile">
         <div className="profile-container">
-          <h1>{this.getUsername()}</h1>  
+          <h1>{this.getUsername()}</h1>
           <Nav className="profile-nav" bsStyle="pills" activeKey={this.state.activeKey} onSelect={this.handleSelect.bind(this)}>
             <NavItem bsStyle="btn btn-success" eventKey={1}>Teacher</NavItem>
             <NavItem bsStyle="btn btn-success" eventKey={2}>Learner</NavItem>
@@ -37,6 +42,7 @@ export default class Profile extends React.Component {
           <br></br>
         </div>
         <div className="profile-img"></div>
+        {this.getView()}
       </div>
     );
   }

@@ -3,6 +3,7 @@
 @import "base/animations";
 @import "base/forms";
 @import "base/fonts";
+@import "base/buttons";
 
 @import "module/Loading";
 @import "module/Login";
@@ -10,5 +11,6 @@
 @import "module/Signup";
 @import "module/LoginModal";
 @import "module/Index";
+@import "module/Profile";
 
 @import "state/Navbar";

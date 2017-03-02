@@ -5,21 +5,27 @@ import { Link } from 'react-router';
 
 
 export default class Profile extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleSelect = this.handleSelect.bind(this);
+  constructor(state) {
+    super(state);
+    this.handleSelect = this.handleSelect;
+           this.state = {
+            activeKey: 1
+        };
+
   }
 
-  // handleSelect(selectedKey) {
-  //   this.props.activeKey = selectedKey;
-  // }
+   handleSelect(selectedKey) {
+      this.setState({
+            activeKey: selectedKey
+        });
+   }
 
   render() {
     return (
       <div className="Profile">
         <div className="container">
           <h1>My Profile</h1>
-          <Nav className="profile-nav" bsStyle="pills" activeKey={1} onSelect={this.handleSelect}>
+          <Nav className="profile-nav" bsStyle="pills" activeKey={this.state.activeKey} onSelect={this.handleSelect.bind(this)}>
             <NavItem bsStyle="btn-success" eventKey={1}>Teacher</NavItem>
             <NavItem bsStyle="btn-success" eventKey={2} title="Item">Learner</NavItem>
           </Nav>

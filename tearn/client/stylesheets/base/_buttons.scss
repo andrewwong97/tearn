@@ -1,10 +1,18 @@
 .btn.btn-success {
-  background-color: $primary-color;
-  color: $white;
+  background-color: $primary-color !important;
+  color: $white !important;
   border-color: transparent;
   transition: background-color 200ms ease-in-out;
 }
 
-.btn.btn-success:hover {
-  background-color: #4da6ff;
+.btn-success {
+  background-color: $primary-color !important;
+  border-color: transparent;
+}
+
+.btn.btn-success:hover, .btn.btn-success:focus,
+.btn.btn-success:active, .btn-success:hover,
+.btn-success:focus, .btn-success:active  {
+  background-color: #4da6ff !important;
+  border-color: transparent;
 }

@@ -7,15 +7,16 @@ import { Link } from 'react-router';
 export default class Profile extends React.Component {
   constructor(state) {
     super(state);
-    this.state = {
-      activeKey: 1
-    };
+      this.state = { 
+        activeKey: 1
+      };
+
   }
 
    handleSelect(selectedKey) {
-    this.setState({
+      this.setState({
         activeKey: selectedKey
-    });
+      });
    }
 
   render() {

@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 export default class Profile extends React.Component {
   constructor(state) {
     super(state);
-      this.state = { 
+      this.state = {
         activeKey: 1
       };
 

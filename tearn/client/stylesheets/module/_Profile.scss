@@ -27,3 +27,8 @@
 .profile-nav.nav.nav-pills::before {
   display: none !important;
 }
+
+.learnerRating, .teacherRating {
+  display: inline-block !important;
+  padding: 0 10px;
+}

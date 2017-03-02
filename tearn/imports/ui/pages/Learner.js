@@ -10,14 +10,16 @@ export default class Learner extends React.Component {
 
   render() {
     return (
-      <div className="TeacherView">
+      <div className="LearnerView">
         {this.props.name}
         <h4>Learner Rating</h4>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
+        <div className="learnerRating">
+          <i className="fa fa-star" aria-hidden="true"></i>
+          <i className="fa fa-star" aria-hidden="true"></i>
+          <i className="fa fa-star" aria-hidden="true"></i>
+          <i className="fa fa-star" aria-hidden="true"></i>
+          <i className="fa fa-star" aria-hidden="true"></i>
+        </div>
       </div>
     );
   }

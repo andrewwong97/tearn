@@ -13,6 +13,11 @@ export default class Learner extends React.Component {
       <div className="TeacherView">
         {this.props.name}
         <h4>Learner Rating</h4>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
+        <i className="fa fa-star" aria-hidden="true"></i>
       </div>
     );
   }

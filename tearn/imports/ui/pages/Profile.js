@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Image, Row, Col, Nav, NavItem } from 'react-bootstrap';
-import { Link } from 'react-router';
+import { Link } from 'react-router'
 import Teacher from './Teacher';
 import Learner from './Learner';
 
@@ -18,9 +18,11 @@ export default class Profile extends React.Component {
   getUsername() {
     const user = Meteor.user();
     const name = user && user.profile ? user.profile.name : '';
+    return user ? `${name.first} ${name.last}` : '';
+  }
 
   getView() {
-    return this.state.activeKey == 1 ? <Teacher name={'I am a Teacher!'} /> : <Learner name={'I am a Learner!'} />
+    return this.state.activeKey == 1 ? <Teacher name={''} /> : <Learner name={''} />
   }
 
    handleSelect(selectedKey) {

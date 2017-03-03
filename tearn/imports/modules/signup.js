@@ -32,7 +32,6 @@ const signup = () => {
       Bert.alert(error.reason, 'danger');
     } else {
       browserHistory.push('/profile');
-      Bert.alert('Welcome!', 'success');
     }
   });
 };

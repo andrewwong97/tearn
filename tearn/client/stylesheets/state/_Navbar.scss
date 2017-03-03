@@ -2,7 +2,7 @@
 .navbar-default .navbar-nav > li > a.active:focus,
 .navbar-default .navbar-nav > li > a.active:hover {
   color: $primary-color;
-  background-color: #efefef;
+  background-color: #fff;
 }
 
 .navbar {
@@ -19,7 +19,7 @@
 .profile-img {
   align-self: flex-end;
   width: 32px;
-  height: 32px;
+  height: auto;
   border-radius: 50%;
   background-color: lighten($primary-color, 20%);
 }

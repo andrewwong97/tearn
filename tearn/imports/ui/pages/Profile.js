@@ -1,16 +1,32 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Image, Row, Col, Nav, NavItem } from 'react-bootstrap';
-import { Link } from 'react-router';
-
+import { Link } from 'react-router'
+import Teacher from './Teacher';
+import Learner from './Learner';
 
 export default class Profile extends React.Component {
-  constructor(state) {
-    super(state);
-      this.state = {
-        activeKey: 1
-      };
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeKey: 1,
+    };
+  }
 
+  getUsername() {
+    const user = Meteor.user();
+    const name = user && user.profile ? user.profile.name : '';
+    return user ? `${name.first} ${name.last}` : '';
+  }
+
+  getYear() {
+    const user = Meteor.user();
+    const year = user && user.profile ? user.profile.year : '';
+    return user ? `${year.year}` : '';
+  }
+
+  getView() {
+    return this.state.activeKey == 1 ? <Teacher data={''} /> : <Learner data={''} />
   }
 
    handleSelect(selectedKey) {
@@ -19,18 +35,21 @@ export default class Profile extends React.Component {
       });
    }
 
-  render() {
+    render() {
+    console.log(this.getUsername() == 'undefined undefined');
     return (
       <div className="Profile">
         <div className="profile-container">
-          <h1>My Profile</h1>
+          <h1>{this.getUsername()}</h1>
           <Nav className="profile-nav" bsStyle="pills" activeKey={this.state.activeKey} onSelect={this.handleSelect.bind(this)}>
-            <NavItem bsStyle="btn-success" eventKey={1}>Teacher</NavItem>
-            <NavItem bsStyle="btn-success" eventKey={2} title="Item">Learner</NavItem>
+            <NavItem bsStyle="btn btn-success" eventKey={1}>Teacher</NavItem>
+            <NavItem bsStyle="btn btn-success" eventKey={2}>Learner</NavItem>
           </Nav>
           <br></br>
         </div>
+        <h3>Class of {this.getYear()}</h3>
         <div className="profile-img"></div>
+        {this.getView()}
       </div>
     );
   }

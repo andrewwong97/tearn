@@ -1,8 +1,17 @@
+// Normal font
 @font-face {
   font-family: 'Circular Std';
   src: url('../../public/fonts/CircularStd-Book.woff') format('woff'), /* Pretty Modern Browsers */
        url('../../public/fonts/CircularStd-Book.ttf')  format('truetype'); /* Safari, Android, iOS */
   font-weight: normal;
+}
+
+// Bold font
+@font-face {
+  font-family: 'Circular Std';
+  src: url('../../public/fonts/CircularStd-Black.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../public/fonts/CircularStd-Black.ttf')  format('truetype'); /* Safari, Android, iOS */
+  font-weight: bold;
 }
 
 $font-stack: "Circular Std", "Source Sans Pro", "Helvetica", sans-serif;
@@ -11,6 +20,10 @@ html, body, h1, h2, h3, h4, h5, h6, a, p, button, input, form, footer {
   font-family: $font-stack !important;
 }
 
-h1 {
+h4 {
   display: inline-block !important;
+}
+
+.fa.fa-star {
+  color: $gold;
 }

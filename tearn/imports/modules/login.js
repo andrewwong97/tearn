@@ -15,11 +15,9 @@ const login = () => {
     if (error) {
       Bert.alert(error.reason, 'warning');
     } else {
-      Bert.alert('Logged in!', 'success');
-
       document.querySelector('[name="emailAddress"]').value = '';
       document.querySelector('[name="password"]').value = '';
-      
+
       const { location } = component.props;
       if (location.state && location.state.nextPathname) {
         browserHistory.push(location.state.nextPathname);

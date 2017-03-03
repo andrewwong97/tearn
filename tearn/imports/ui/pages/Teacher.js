@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Image, Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router';
+import Rating from '../components/Rating.js';
+
 
 export default class Teacher extends React.Component {
   constructor(props) {
@@ -13,11 +15,7 @@ export default class Teacher extends React.Component {
       <div className="TeacherView">
         {this.props.name}
         <h4>Teacher Rating</h4>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
-        <i className="fa fa-star" aria-hidden="true"></i>
+        <Rating rating="4.95" />
       </div>
     );
   }

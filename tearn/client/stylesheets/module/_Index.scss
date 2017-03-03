@@ -1,8 +1,22 @@
-.Index .jumbotron {
-  background-color: $primary-color;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;
-  color: $yellow;
+.Index {
+  .jumbotron {
+    align-items: center;
+    width: 50%;
+    height: 20%;
+    background-color: $primary-color;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    color: $yellow;
+  }
+}
+
+#react-root {
+  height: 1000px;
+  background: url("JHU.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

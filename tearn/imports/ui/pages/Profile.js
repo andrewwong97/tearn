@@ -5,7 +5,6 @@ import { Link } from 'react-router'
 import Teacher from './Teacher';
 import Learner from './Learner';
 
-
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);

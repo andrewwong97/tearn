@@ -11,7 +11,6 @@ export default class Profile extends React.Component {
     super(props);
     this.state = {
       activeKey: 1,
-      user: Meteor.user()
     };
   }
 
@@ -21,8 +20,14 @@ export default class Profile extends React.Component {
     return user ? `${name.first} ${name.last}` : '';
   }
 
+  getYear() {
+    const user = Meteor.user();
+    const year = user && user.profile ? user.profile.year : '';
+    return user ? `${year.year}` : '';
+  }
+
   getView() {
-    return this.state.activeKey == 1 ? <Teacher name={''} /> : <Learner name={''} />
+    return this.state.activeKey == 1 ? <Teacher data={''} /> : <Learner data={''} />
   }
 
    handleSelect(selectedKey) {
@@ -43,6 +48,7 @@ export default class Profile extends React.Component {
           </Nav>
           <br></br>
         </div>
+        <h3>Class of {this.getYear()}</h3>
         <div className="profile-img"></div>
         {this.getView()}
       </div>

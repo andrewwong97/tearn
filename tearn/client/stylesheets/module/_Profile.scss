@@ -1,22 +1,32 @@
 .Profile {
   h1 {
+    display: inline-block;
     margin: 0 10px;
   }
+
+  h3 {
+    display: block;
+    margin: 10px;
+  }
+
   .profile-container {
     display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   .profile-img {
     width: 150px;
     height: 150px;
     margin: 20px 0;
   }
+
   .profile-nav {
     display: inline-block;
     margin: 0 10px;
   }
+
 }
 
 .profile-nav.nav.nav-pills {
@@ -28,7 +38,13 @@
   display: none !important;
 }
 
-.learnerRating, .teacherRating {
-  display: inline-block !important;
-  padding: 0 10px;
+.LearnerView, .TeacherView {
+  padding-left: 10px;
+}
+
+.Rating {
+  .ratingTitle {
+    display: inline-block !important;
+    padding-left: 10px;
+  }
 }

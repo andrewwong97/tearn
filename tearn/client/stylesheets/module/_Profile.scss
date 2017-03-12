@@ -1,10 +1,17 @@
 .Profile {
+
+  background-color: #fafafa;
+  box-shadow: 1px 1px 15px 0 lighten(#2f2f2f, 67%);
+  border-radius: 5px;
+  height: 500px;
+  width: 100%;
+
   h1 {
     display: inline-block;
     margin: 0 10px;
   }
 
-  h3 {
+  h3, h4, h5, h6 {
     display: block;
     margin: 10px;
   }
@@ -14,37 +21,58 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    color: $dark;
   }
 
   .profile-img {
     width: 150px;
     height: 150px;
-    margin: 20px 0;
+    margin: 20px 10px;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    // TODO: remove this, add circular react
   }
 
   .profile-nav {
-    display: inline-block;
     margin: 0 10px;
   }
 
-}
+  .profile-nav.nav.nav-pills {
+    color: $primary-color;
+    display: inline-block !important;
+    margin: 10px;
+  }
 
-.profile-nav.nav.nav-pills {
-  color: $primary-color;
-  display: inline-block !important;
-}
 
-.profile-nav.nav.nav-pills::before {
-  display: none !important;
-}
+  .profile-nav.nav.nav-pills::before {
+    display: none !important;
+  }
 
-.LearnerView, .TeacherView {
-  padding-left: 10px;
-}
+  @media (max-width: 768px) {
+    text-align: center;
+    .profile-img {
+      margin: 0 auto;
+    }
+    .profile-container {
+      justify-content: center;
+    }
+  }
 
-.Rating {
+  .LearnerView, .TeacherView {
+    margin-left: 10px;
+  }
+
+  .Rating {
+    margin-left: 10px;
+    display: inline-block !important;
+  }
+
   .ratingTitle {
     display: inline-block !important;
-    padding-left: 10px;
+    margin-left: 10px;
+  }
+
+  .details {
+    color: $dark;
   }
 }

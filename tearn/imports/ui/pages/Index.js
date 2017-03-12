@@ -9,12 +9,12 @@ export default class Index extends React.Component {
 
     return (
       <div className="Index">
-        <Jumbotron className="text-left">
+        <Jumbotron className="jumbotron-fluid">
           <h2>Tearn</h2>
-          <p>Student to student on demand academic help based on the notion that students <br></br> can be experts in one subject and need help in others.</p>
+          <p>Student to student on demand academic help based on the notion that students can be experts in one subject and need help in others.</p>
           <LoginModal />
-          <br></br>
         </Jumbotron>
+        <br></br>
       </div>
     );
   }

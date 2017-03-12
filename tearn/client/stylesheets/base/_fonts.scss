@@ -20,10 +20,6 @@ html, body, h1, h2, h3, h4, h5, h6, a, p, button, input, form, footer {
   font-family: $font-stack !important;
 }
 
-h4 {
-  display: inline-block !important;
-}
-
-.fa.fa-star {
+.fa-star, .fa-star-o, .fa-star-half {
   color: $gold;
 }

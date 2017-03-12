@@ -10,16 +10,16 @@
   border-bottom: 1px solid #efefef;
 }
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand>img {
+  padding: 7px 14px;
+}
+
 .flex-img {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.profile-img {
-  align-self: flex-end;
-  width: 32px;
-  height: auto;
-  border-radius: 50%;
-  background-color: lighten($primary-color, 20%);
 }

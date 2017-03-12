@@ -18,6 +18,12 @@ const getUserData = () => ({
     year: {
       year: document.querySelector('[name="year"]').value,
     },
+    school: {
+      major: document.querySelector('[name="major"]').value,
+      minor: document.querySelector('[name="minor"]').value,
+      school: document.querySelector('[name="school"]').value,
+
+    },
     credit: {
       credit: "200",
     },
@@ -58,6 +64,12 @@ const validate = () => {
         digits: true,
         minlength: 4,
         maxlength: 4,
+      },
+      major: {
+        required: true,
+      },
+      minor: {
+        required: true,
       },
     },
     messages: {

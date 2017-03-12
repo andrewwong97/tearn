@@ -36,9 +36,9 @@ Meteor.startup(() => {
         <Route name="myProfile" path="/profile" component={ Profile } onEnter={ authenticate } />
         <Route name="JobView" path="/jobs" component={ Jobs } onEnter={ authenticate } />
         <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
-        <Route name="newDocument" path="/documents/new" component={ NewDocument } onEnter={ authenticate } />
-        <Route name="editDocument" path="/documents/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
-        <Route name="viewDocument" path="/documents/:_id" component={ ViewDocument } onEnter={ authenticate } />
+        <Route name="newDocument" path="/jobs/new" component={ NewDocument } onEnter={ authenticate } />
+        <Route name="editDocument" path="/jobs/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
+        <Route name="viewDocument" path="/jobs/:_id" component={ ViewDocument } onEnter={ authenticate } />
         <Route name="login" path="/login" component={ Login } />
         <Route name="recover-password" path="/recover-password" component={ RecoverPassword } />
         <Route name="reset-password" path="/reset-password/:token" component={ ResetPassword } />

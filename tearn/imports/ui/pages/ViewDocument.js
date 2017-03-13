@@ -5,7 +5,7 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import { removeDocument } from '../../api/documents/methods.js';
 
 const handleEdit = (_id) => {
-  browserHistory.push(`/documents/${_id}/edit`);
+  browserHistory.push(`/jobs/${_id}/edit`);
 }
 
 const handleRemove = (_id) => {
@@ -15,7 +15,7 @@ const handleRemove = (_id) => {
         Bert.alert(error.reason, 'danger');
       } else {
         Bert.alert('Document deleted!', 'success');
-        browserHistory.push('/documents');
+        browserHistory.push('/jobs');
       }
     });
   }

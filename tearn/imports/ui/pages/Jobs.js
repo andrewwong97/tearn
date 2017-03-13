@@ -10,7 +10,7 @@ const Jobs = () => (
       <Col xs={ 12 }>
         <div className="page-header clearfix">
           <h4 className="pull-left">Jobs</h4>
-          <Link to="/documents/new">
+          <Link to="/jobs/new">
             <Button bsStyle="success" className="pull-right" >Add a Job</Button>
           </Link>
         </div>

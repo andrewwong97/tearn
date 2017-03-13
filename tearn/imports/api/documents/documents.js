@@ -26,6 +26,11 @@ Documents.schema = new SimpleSchema({
     type: String,
     label: 'The body of the document.',
   },
+  student: {
+    type: String,
+    label: 'Student Id',
+  },
+
 });
 
 Documents.attachSchema(Documents.schema);
@@ -33,4 +38,5 @@ Documents.attachSchema(Documents.schema);
 Factory.define('document', Documents, {
   title: () => 'Factory Title',
   body: () => 'Factory Body',
+  student: () => 'Factory student',
 });

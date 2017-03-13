@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 import { ListGroup, ListGroupItem, Alert } from 'react-bootstrap';
 
 const handleNav = (_id) => {
-  browserHistory.push(`/documents/${_id}`);
+  browserHistory.push(`/jobs/${_id}`);
 }
 
 const DocumentsList = ({ documents }) => (

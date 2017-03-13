@@ -72,6 +72,33 @@ export default class Signup extends React.Component {
                   placeholder="Your Graduation Year"
                 />
               </FormGroup>
+              <FormGroup>
+                <ControlLabel>University</ControlLabel>
+                <FormControl
+                  type="text"
+                  ref="school"
+                  name="school"
+                  placeholder="University?"
+                />
+              </FormGroup>
+              <FormGroup>
+                <ControlLabel>Major</ControlLabel>
+                <FormControl
+                  type="text"
+                  ref="major"
+                  name="major"
+                  placeholder="Major?"
+                />
+              </FormGroup>
+              <FormGroup>
+                <ControlLabel>Minor</ControlLabel>
+                <FormControl
+                  type="text"
+                  ref="minor"
+                  name="minor"
+                  placeholder="Minor?"
+                />
+              </FormGroup>
               <Button type="submit" bsStyle="success">Sign Up</Button>
             </form>
             <p style={{'font-size':'.9em'}}>Already have an account? <Link to="/login">Log In</Link>.</p>

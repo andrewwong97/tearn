@@ -13,8 +13,9 @@ const handleUpsert = () => {
   const upsert = {
     title: document.querySelector('[name="title"]').value.trim(),
     body: document.querySelector('[name="body"]').value.trim(),
+    student: Meteor.userId(),
   };
-
+  console.log(Meteor.userId());
   if (doc && doc._id) upsert._id = doc._id;
 
   upsertDocument.call(upsert, (error, response) => {
@@ -23,7 +24,7 @@ const handleUpsert = () => {
     } else {
       component.documentEditorForm.reset();
       Bert.alert(confirmation, 'success');
-      browserHistory.push(`/documents/${response.insertedId || doc._id}`);
+      browserHistory.push(`/jobs/${response.insertedId || doc._id}`);
     }
   });
 };
@@ -37,6 +38,9 @@ const validate = () => {
       body: {
         required: true,
       },
+      student: {
+        required: true,
+      },
     },
     messages: {
       title: {
@@ -44,6 +48,9 @@ const validate = () => {
       },
       body: {
         required: 'This thneeds a body, please.',
+      },
+      student: {
+        required: 'this is here',
       },
     },
     submitHandler() { handleUpsert(); },

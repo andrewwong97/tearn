@@ -58,9 +58,10 @@ export default class Profile extends React.Component {
             </Nav>
           </div>
           <div className="details">
+            <h2>{Meteor.user().profile.school.school}</h2>
             <h3>Sophomore | Class of {this.getYear()}</h3>
-            <h5>Major(s): Computer Science</h5>
-            <h5>Minor(s): E&M, Computational Medicine</h5>
+            <h5>Major(s): {Meteor.user().profile.school.major}</h5>
+            <h5>Minor(s): {Meteor.user().profile.school.minor}</h5>
           </div>
           <div className="profile-img"></div>
           {this.getView()}

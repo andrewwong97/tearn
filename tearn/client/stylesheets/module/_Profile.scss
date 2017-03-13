@@ -1,19 +1,25 @@
 .Profile {
 
-  background-color: #fafafa;
-  box-shadow: 1px 1px 15px 0 lighten(#2f2f2f, 67%);
-  border-radius: 5px;
-  height: 500px;
-  width: 100%;
+  @media (min-width: 1200px) {
+    background-color: #fafafa;
+    box-shadow: 1px 1px 15px 0 lighten(#2f2f2f, 63%);
+    border-radius: 5px;
+    height: 550px;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 0 auto;
+  }
 
   h1 {
     display: inline-block;
-    margin: 0 10px;
+  }
+
+  h2 {
+    margin: 0px inherit;
   }
 
   h3, h4, h5, h6 {
     display: block;
-    margin: 10px;
   }
 
   .profile-container {
@@ -24,17 +30,16 @@
     color: $dark;
   }
 
-  .profile-img {
+  .profile-img img {
     width: 150px;
     height: 150px;
-    margin: 20px 10px;
     border-radius: 50%;
     background-color: $secondary-color;
-    // TODO: remove this, add circular react
+    transition: box-shadow 200ms ease-out;
   }
 
-  .profile-nav {
-    margin: 0 10px;
+  .profile-img img:hover {
+    box-shadow: 1px 1px 10px 0 lighten(#2f2f2f, 63%);
   }
 
   .profile-nav.nav.nav-pills {
@@ -48,7 +53,7 @@
     display: none !important;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     text-align: center;
     .profile-img {
       margin: 0 auto;
@@ -58,21 +63,30 @@
     }
   }
 
-  .LearnerView, .TeacherView {
-    margin-left: 10px;
-  }
-
   .Rating {
-    margin-left: 10px;
     display: inline-block !important;
+    margin: 0;
+    padding: 0;
   }
 
   .ratingTitle {
     display: inline-block !important;
-    margin-left: 10px;
+    margin: 0 10px;
   }
 
   .details {
     color: $dark;
+    h2, h3 {
+      margin-top: 0;
+    }
+  }
+  .TeacherView, .LearnerView {
+    text-align: center;
+    h3 {
+      font-size: 1.5em;
+    }
+    p {
+      color: $secondary-color;
+    }
   }
 }

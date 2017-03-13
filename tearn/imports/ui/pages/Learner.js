@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import { Image, Row, Col, Nav, NavItem } from 'react-bootstrap';
+import { Image, Col} from 'react-bootstrap';
 import { Link } from 'react-router';
 
 

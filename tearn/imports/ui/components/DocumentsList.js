@@ -7,13 +7,14 @@ const handleNav = (_id) => {
 }
 
 const DocumentsList = ({ documents }) => (
-  documents.length > 0 ? <ListGroup className="DocumentsList">
+  documents.length > 0 ? <ul className="DocumentsList">
     {documents.map(({ _id, title }) => (
-      <ListGroupItem key={ _id } onClick={ () => handleNav(_id) }>
+      <li class="job" key={ _id } onClick={ () => handleNav(_id) }>
         { title }
-      </ListGroupItem>
+        <div id="delete" aria-hidden="true">&times;</div>
+      </li>
     ))}
-  </ListGroup> :
+  </ul> :
   <Alert bsStyle="warning">No documents yet.</Alert>
 );
 

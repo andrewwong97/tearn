@@ -4,7 +4,7 @@ node_js:
   - "0.10"
 
 before_install:
-  - "curl -L https://git.io/ejPSng | /bin/sh"
+  - "cd tearn && curl -L https://git.io/ejPSng | /bin/sh"
 
 env:
   - CXX=g++-4.8

@@ -6,7 +6,8 @@
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
     color: lighten($primary-color, 25%);
-    background-color: $secondary-color;
+    background-color: $secondary-color !important;
+    cursor: pointer;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -15,10 +16,11 @@
 
 .navbar-default .navbar-nav>li>a:hover {
   color: lighten($primary-color, 25%);
+  cursor: pointer;
 }
 
 .navbar {
-  background-color: $secondary-color;
+  background-color: $secondary-color !important;
   border: none;
   border-bottom: 1px solid #efefef;
 }
@@ -33,6 +35,12 @@
   }
 }
 
+.navbar-default {
+    background-color: $secondary-color !important;
+    border-color: none;
+}
+
+
 /* LOGO OVERRIDE */
 
 .navbar-brand {
@@ -41,4 +49,8 @@
 }
 .navbar-brand>img {
   padding: 7px 14px;
+}
+
+.navbar-brand>img:hover {
+  cursor: pointer;
 }

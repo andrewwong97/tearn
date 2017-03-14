@@ -1,27 +1,37 @@
 .DocumentsList {
-
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 
+  .Document {
+    width: 100%;
+  }
+
+  .panel-collapse.collapse {
+    border: none !important;
+  }
+
+  .panel-collapse.collapse.in {
+     border: 1px solid transparent !important;
+  }
+
   #delete {
-    color: lighten($primary-color, 25%);
+    color: $primary-alt;
     font-size: 20pt;
     font-weight: 400;
   }
 
   #delete:hover {
-    color: lighten($primary-color, 15%);
+    color: lighten($primary-alt, 10%);
     cursor: pointer;
   }
 
-  li {
+  .job {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 
     text-decoration: none;
     list-style: none;
@@ -36,7 +46,7 @@
     margin-bottom: 10px;
   }
 
-  li:hover {
+  .job:hover {
     box-shadow: inset -1px 2px 7px rgba(0,0,0,0.15), 0 0 8px transparentize($secondary-color, .4);
     cursor: pointer;
   }

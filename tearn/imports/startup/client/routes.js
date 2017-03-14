@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import App from '../../ui/layouts/App.js';
-import Documents from '../../ui/pages/Documents.js';
+import Jobs from '../../ui/pages/Jobs.js';
 import NewDocument from '../../ui/pages/NewDocument.js';
 import EditDocument from '../../ui/containers/EditDocument.js';
 import ViewDocument from '../../ui/containers/ViewDocument.js';
@@ -16,7 +16,7 @@ import RecoverPassword from '../../ui/pages/RecoverPassword.js';
 import ResetPassword from '../../ui/pages/ResetPassword.js';
 import Signup from '../../ui/pages/Signup.js';
 import Profile from '../../ui/pages/Profile.js';
-import Jobs from '../../ui/pages/Jobs.js';
+
 
 const authenticate = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
@@ -35,7 +35,6 @@ Meteor.startup(() => {
         <IndexRoute name="index" component={ Index } />
         <Route name="myProfile" path="/profile" component={ Profile } onEnter={ authenticate } />
         <Route name="JobView" path="/jobs" component={ Jobs } onEnter={ authenticate } />
-        <Route name="documents" path="/documents" component={ Documents } onEnter={ authenticate } />
         <Route name="newDocument" path="/jobs/new" component={ NewDocument } onEnter={ authenticate } />
         <Route name="editDocument" path="/jobs/:_id/edit" component={ EditDocument } onEnter={ authenticate } />
         <Route name="viewDocument" path="/jobs/:_id" component={ ViewDocument } onEnter={ authenticate } />

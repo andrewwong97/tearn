@@ -100,8 +100,8 @@ export default class Signup extends React.Component {
                 />
               </FormGroup>
               <Button type="submit" bsStyle="success">Sign Up</Button>
+              <p>Already have an account? <Link to="/login">Log In</Link>.</p>
             </form>
-            <p style={{'font-size':'.9em'}}>Already have an account? <Link to="/login">Log In</Link>.</p>
           </Col>
         </Row>
       </div>

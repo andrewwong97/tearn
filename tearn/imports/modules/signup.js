@@ -24,8 +24,8 @@ const getUserData = () => ({
       school: document.querySelector('[name="school"]').value,
 
     },
-    credit: {
-      credit: "200",
+    credits: {
+      credits: "200",
     },
   },
 });

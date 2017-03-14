@@ -7,28 +7,37 @@
   align-items: center;
 
   #delete {
-    align-self: flex-end;
-    right: 0;
-    color: lighten(red, 25%);
-    font-size: 25pt;
+    color: lighten($primary-color, 25%);
+    font-size: 20pt;
+    font-weight: 400;
+  }
+
+  #delete:hover {
+    color: lighten($primary-color, 15%);
+    cursor: pointer;
   }
 
   li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
     text-decoration: none;
     list-style: none;
-    color: $primary-color;
+    font-size: 16pt;
+    font-weight: 300;
+    color: white;
     width: 100%;
-    min-height: 20px;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 3px;
-    background: linear-gradient(to bottom, #ffffff 15%, #efefef);
-    border: 1px solid #cccccc;
-    transition: box-shadow 100ms ease-in, margin-bottom 100ms ease-in;
+    background: linear-gradient(to bottom, lighten($secondary-color,10%) 50%, lighten($secondary-color, 15%));
+    transition: box-shadow 100ms ease-in;
+    margin-bottom: 10px;
   }
 
   li:hover {
-    box-shadow: 0px 2px 3px rgba(0,0,0,0.1);
-	  margin-bottom: 10px;
-    color: lighten($secondary-color, 0%);
+    box-shadow: inset -1px 2px 7px rgba(0,0,0,0.15), 0 0 8px transparentize($secondary-color, .4);
+    cursor: pointer;
   }
 }

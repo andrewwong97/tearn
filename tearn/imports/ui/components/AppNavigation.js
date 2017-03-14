@@ -11,7 +11,7 @@ const AppNavigation = ({ hasUser }) => (
     <Navbar.Header>
       <Navbar.Brand>
         <Link to="/">
-          <img src="logos/LogoCircular.png" width="60px" height="auto" />
+          <img src="logos/LogoCircular-inverted.png" width="60px" height="auto" />
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle />

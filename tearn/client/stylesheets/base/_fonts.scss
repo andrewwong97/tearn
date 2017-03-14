@@ -18,7 +18,7 @@
 }
 
 
-$font-stack: "Circular Std", -apple-system, BlinkMacSystemFont, "Source Sans Pro", "Helvetica", sans-serif;
+$font-stack: "Source Sans Pro", "Circular Std", -apple-system, BlinkMacSystemFont, "Helvetica", sans-serif;
 
 html, body, h1, h2, h3, h4, h5, h6, a, p, button, input, form, footer {
   font-family: $font-stack !important;

@@ -4,19 +4,16 @@
     color: white;
   }
 
-  p {
-    color: white;
-  }
 
   .jumbotron {
-    background-color: $primary-color;
+    background-color: $secondary-color;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 300px;
     min-width: 100%;
-    color: $yellow;
+    color: lighten($primary-color, 25%);
   }
 
   // #react-root {

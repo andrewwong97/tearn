@@ -22,7 +22,7 @@ export default class DocumentEditor extends React.Component {
           type="text"
           name="title"
           defaultValue={ doc && doc.title }
-          placeholder="Oh, The Places You'll Go!"
+          placeholder="What questions do you have?"
         />
       </FormGroup>
       <FormGroup>
@@ -31,7 +31,7 @@ export default class DocumentEditor extends React.Component {
           componentClass="textarea"
           name="body"
           defaultValue={ doc && doc.body }
-          placeholder="Congratulations! Today is your day. You're off to Great Places! You're off and away!"
+          placeholder="I need help on..."
         />
       </FormGroup>
       <Button type="submit" bsStyle="success">

@@ -1,14 +1,39 @@
-.navbar-default .navbar-nav > li > a.active,
-.navbar-default .navbar-nav > li > a.active:focus,
-.navbar-default .navbar-nav > li > a.active:hover {
-  color: $primary-color;
-  background-color: #fff;
+/* NAVBAR OVERRIDE */
+
+/* DO NOT TOUCH */
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: lighten($primary-color, 25%);
+    background-color: $secondary-color;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: lighten($primary-color, 25%);
 }
 
 .navbar {
-  background-color: #fafafa;
+  background-color: $secondary-color;
+  border: none;
   border-bottom: 1px solid #efefef;
 }
+
+.navbar .navbar-default {
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0;
+  }
+}
+
+/* LOGO OVERRIDE */
 
 .navbar-brand {
   display: flex;
@@ -16,10 +41,4 @@
 }
 .navbar-brand>img {
   padding: 7px 14px;
-}
-
-.flex-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

@@ -8,6 +8,7 @@ const Documents = () => (
     <Row>
       <Col xs={ 12 }>
         <div className="page-header clearfix">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
           <h4 className="pull-left">Documents</h4>
           <Link to="/documents/new">
             <Button

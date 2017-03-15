@@ -37,9 +37,9 @@ export default class Document extends React.Component {
   render() {
     return (
       <div className="Document" key={ this.props._id }>
-        <li className="job" onClick={ () => this.handleSelect(!this.state.open)}>
+        <li key={ _id } className="job" onClick={ () => this.handleSelect(!this.state.open)}>
           { this.props.title }
-          <span id="delete" aria-hidden="true" onClick={ () => {this.handleSelect(false)} }>&times;</span>
+          <span id="delete" aria-hidden="true" onClick={ () => {this.handleRemove(this)} }>&times;</span>
         </li>
         
         {console.log(this.state.open)}

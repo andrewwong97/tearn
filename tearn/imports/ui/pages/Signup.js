@@ -2,17 +2,16 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Row, Col, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import handleSignup from '../../modules/signup';
+import { WithContext as ReactTags } from 'react-tag-input';
 
 export default class Signup extends React.Component {
   componentDidMount() {
     handleSignup({ component: this });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-
   render() {
+    let tags = this.state.tags;
+    let suggestions = this.state.suggestions;
     return (
       <div className="Signup">
         <Row className="signup-container">
@@ -99,6 +98,12 @@ export default class Signup extends React.Component {
                   placeholder="Minor?"
                 />
               </FormGroup>
+              <section className= "app">
+                <Tokenizer
+              tokens={this.state.tokens}
+              tokenize={this._tokenize}
+              removeToken={this._removeToken} />
+              </section>
               <Button type="submit" bsStyle="success">Sign Up</Button>
               <p>Already have an account? <Link to="/login">Log In</Link>.</p>
             </form>

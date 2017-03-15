@@ -12,7 +12,6 @@
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-align-items: center;
-  align-items: center;
 
   .Document {
     width: 100%;
@@ -30,7 +29,6 @@
     color: $primary-alt;
     font-size: 20pt;
     font-weight: 400;
-    z-index: 9999;
   }
 
   #delete:hover {
@@ -54,11 +52,46 @@
     background: linear-gradient(to bottom, lighten($secondary-color,10%) 50%, lighten($secondary-color, 15%));
     transition: box-shadow 100ms ease-in;
     margin-bottom: 10px;
-    z-index: -9;
   }
 
   .job:hover {
     box-shadow: inset -1px 2px 7px rgba(0,0,0,0.15), 0 0 8px transparentize($secondary-color, .4);
     cursor: pointer;
+  }
+
+  .job-details {
+    text-align: left;
+    a {
+      margin-left: 10px;
+      color: $primary-alt;
+      transition: color 200ms ease-in;
+    }
+
+    a:hover {
+      color: #f5f5ff;
+      text-decoration: none;
+    }
+
+    .sliding {
+      display: inline-block;
+      position: relative;
+    }
+
+    .sliding:after {
+      content: '';
+      display: block;
+      margin: auto;
+      height: 2px;
+      background-color: $primary-alt;
+      margin-top: 2px;
+      width: 0%;
+      border-radius: 1px;
+      transition: width 200ms ease-in;
+    }
+
+    .sliding:hover:after {
+      content: '';
+      width:100%;
+    }
   }
 }

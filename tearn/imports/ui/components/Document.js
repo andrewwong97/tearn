@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import { Panel } from 'react-bootstrap';
 import { removeDocument } from '../../api/documents/methods.js';
 
@@ -30,19 +30,26 @@ export default class Document extends React.Component {
     }
   }
 
+  getUser(_id) {
+    const user = Meteor.users.findOne(this.props.student);
+    const profile = user && user.profile ? user.profile : 'undefined';
+    return profile && profile.name && profile.name.first ? profile.name.first : 'undefined';
+  }
+
   render() {
     return (
       <div className="Document" key={ this.props._id }>
         <li className="job" onClick={() => this.setState({open: !this.state.open})}>
-          { this.props.title }
+          <div className="job-details">
+            { this.props.title }
+            <Link className="sliding" to="/profile">by user { this.getUser(this.props.student) }</Link>
+          </div>
           <span id="delete" aria-hidden="true" onClick={ (e) => {
               e.stopPropagation();
               this.handleRemove(this.props._id);
             }}>&times;</span>
         </li>
 
-
-        {console.log(this.state.open)}
         <Panel collapsible
           style={{'visibility': this.state.open ? 'visible' : 'collapse'}}
           expanded={this.state.open}>

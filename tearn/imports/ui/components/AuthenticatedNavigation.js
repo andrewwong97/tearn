@@ -18,7 +18,7 @@ const AuthenticatedNavigation = () => (
   <div className="MainNav">
     <Nav>
       <LinkContainer to="/jobs">
-        <NavItem eventKey={ 1 } href="/jobs">My Jobs</NavItem>
+        <NavItem eventKey={ 1 } href="/jobs">All Jobs</NavItem>
       </LinkContainer>
       <LinkContainer to="/profile">
         <NavItem eventKey={ 2 } href="/profile">My Profile</NavItem>

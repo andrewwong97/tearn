@@ -7,13 +7,13 @@ export default class Document extends React.Component {
   constructor(props) {
     super(props);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleSelect - this.handleSelect.bind(this);
     this.state = {
       open: null
     };
   }
 
   componentWillMount() {
-    this.setState({ open: false });
   }
 
   handleRemove(_id) {
@@ -27,14 +27,22 @@ export default class Document extends React.Component {
       });
     }
   }
+  handleSelect(isOpen) {
+    this.setState({
+      open: (isOpen)
+    });
+   }
+
 
   render() {
     return (
       <div className="Document" key={ this.props._id }>
-        <li className="job" onClick={ () => this.setState({ open: !this.state.open }) }>
+        <li className="job" onClick={ () => this.handleSelect(!this.state.open)}>
           { this.props.title }
-          <span id="delete" aria-hidden="true" onClick={ () => this.handleRemove(this.props._id) }>&times;</span>
+          <span id="delete" aria-hidden="true" onClick={ () => {this.handleSelect(false)} }>&times;</span>
         </li>
+        
+        {console.log(this.state.open)}
         <Panel collapsible
           style={{'visibility': this.state.open ? 'visible' : 'collapse'}}
           expanded={this.state.open}>

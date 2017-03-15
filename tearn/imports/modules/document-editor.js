@@ -24,7 +24,8 @@ const handleUpsert = () => {
     } else {
       component.documentEditorForm.reset();
       Bert.alert(confirmation, 'success');
-      browserHistory.push(`/jobs/${response.insertedId || doc._id}`);
+      // browserHistory.push(`/jobs/${response.insertedId || doc._id}`);
+      browserHistory.push('/jobs');
     }
   });
 };
@@ -47,7 +48,7 @@ const validate = () => {
         required: 'Need a title in here, Seuss.',
       },
       body: {
-        required: 'This thneeds a body, please.',
+        required: 'This needs a body, please.',
       },
       student: {
         required: 'this is here',

@@ -30,16 +30,18 @@ export default class Document extends React.Component {
     }
   }
 
-
   render() {
     return (
       <div className="Document" key={ this.props._id }>
         <li className="job" onClick={() => this.setState({open: !this.state.open})}>
           { this.props.title }
-          
+          <span id="delete" aria-hidden="true" onClick={ (e) => {
+              e.stopPropagation();
+              this.handleRemove(this.props._id);
+            }}>&times;</span>
         </li>
-        <span id="delete" aria-hidden="true" onClick={ () => this.handleRemove(this.props._id)}>&times;</span>
-        
+
+
         {console.log(this.state.open)}
         <Panel collapsible
           style={{'visibility': this.state.open ? 'visible' : 'collapse'}}

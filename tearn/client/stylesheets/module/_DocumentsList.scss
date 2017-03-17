@@ -61,17 +61,19 @@
 
   .job-details {
     text-align: left;
+
     a {
       margin-left: 10px;
+      text-decoration: none;
       color: $primary-alt;
       transition: color 200ms ease-in;
     }
 
     a:hover {
       color: #f5f5ff;
-      text-decoration: none;
     }
 
+    /*
     .sliding {
       display: inline-block;
       position: relative;
@@ -92,6 +94,6 @@
     .sliding:hover:after {
       content: '';
       width:100%;
-    }
+    }*/
   }
 }

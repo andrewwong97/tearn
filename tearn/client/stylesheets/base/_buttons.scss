@@ -17,6 +17,19 @@
   border-color: transparent;
 }
 
+.btn.btn-primary {
+  background-color: $white;
+  color: $primary-color;
+  border-color: transparent;
+  transition: background-color 200ms ease-in-out;
+  margin-right: .5em;
+}
+
+.btn.btn-primary:hover {
+  color: $primary-color;
+  background-color: #efefef;
+}
+
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {

@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import { Image, Row, Col, Nav, NavItem } from 'react-bootstrap';
+import { Row, Col, Nav, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router'
 import Teacher from './Teacher';
 import Learner from './Learner';
@@ -66,8 +66,9 @@ export default class Profile extends React.Component {
           <div className="details">
             <h2>{Meteor.user().profile.school.school}</h2>
             <h3>Sophomore | Class of {this.getYear()}</h3>
-            <h5>Major(s): {Meteor.user().profile.school.major}</h5>
-            <h5>Minor(s): {Meteor.user().profile.school.minor}</h5>
+            <h4>Major(s): {Meteor.user().profile.school.major}</h4>
+            <h4>Minor(s): {Meteor.user().profile.school.minor}</h4>
+            <br></br>
           </div>
 
           <h4>Teacher Rating</h4>

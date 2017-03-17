@@ -24,7 +24,6 @@ const handleUpsert = () => {
     } else {
       component.documentEditorForm.reset();
       Bert.alert(confirmation, 'success');
-      // browserHistory.push(`/jobs/${response.insertedId || doc._id}`);
       browserHistory.push('/jobs');
     }
   });

@@ -8,13 +8,15 @@ export default class Document extends React.Component {
     super(props);
     this.handleRemove = this.handleRemove.bind(this);
     this.state = {
-      open: null
+      open: null,
+      isOwner: null
     };
   }
 
   componentWillMount() {
     this.setState({
-      open: false
+      open: false,
+      isOwner: this.isOwner()
     });
   }
 
@@ -31,9 +33,13 @@ export default class Document extends React.Component {
   }
 
   getUser(_id) {
-    const user = Meteor.users.findOne(this.props.student);
+    const user = Meteor.users.findOne(_id); // TODO: fix, doesn't work on client side
     const profile = user && user.profile ? user.profile : 'undefined';
     return profile && profile.name && profile.name.first ? profile.name.first : 'undefined';
+  }
+
+  isOwner() {
+    return this.props.student === Meteor.user()._id ? 'visible' : 'collapse';
   }
 
   render() {
@@ -44,10 +50,13 @@ export default class Document extends React.Component {
             { this.props.title }
             <Link className="sliding" to="/profile">by user { this.getUser(this.props.student) }</Link>
           </div>
-          <span id="delete" aria-hidden="true" onClick={ (e) => {
-              e.stopPropagation();
-              this.handleRemove(this.props._id);
-            }}>&times;</span>
+
+          <span id="delete"
+            aria-hidden="true" onClick={ (e) => {
+            e.stopPropagation();
+            this.handleRemove(this.props._id);
+            }}
+            style={{'visibility': this.state.isOwner}}>&times;</span>
         </li>
 
         <Panel collapsible

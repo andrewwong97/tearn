@@ -1,9 +1,11 @@
 .navbar {
-  background-color: transparent !important;
   border: none !important;
   border-bottom: 0;
   margin-bottom: 0px !important;
   position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
   min-width: 100vw;
   z-index: 999;
 }
@@ -14,10 +16,10 @@
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: white;
+  color: white !important;
 
   &:hover {
-    color: $primary-alt;
+    color: $primary-alt !important;
   }
 }
 

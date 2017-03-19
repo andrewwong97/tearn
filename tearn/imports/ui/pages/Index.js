@@ -14,8 +14,8 @@ export default class Index extends React.Component {
       <div className="Index">
         <Jumbotron className="jumbotron vignette">
           <span className="hero-text">
-            <h2>Tearn</h2>
-            <p>Student to student on demand academic help based on the notion that students can be experts in one subject and need help in others.</p>
+            <h2 style={{'font-size': '24pt'}}>Tearn</h2>
+            <p style={{'font-size': '20pt'}}>Student to student on demand academic help based on the notion that students can be experts in one subject and need help in others.</p>
             {this.renderModal()}
           </span>
         </Jumbotron>

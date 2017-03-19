@@ -12,17 +12,19 @@ export default class Jobs extends React.Component {
   render() {
     return (
       <div className="Jobs">
-        <Row>
-          <Col xs={ 12 }>
-            <div className="page-header clearfix">
-              <h4 className="pull-left">Jobs</h4>
-              <Link to="/jobs/new">
-                <Button bsStyle="success" className="pull-right" >Add a Job</Button>
-              </Link>
-            </div>
-            <DocumentsList />
-          </Col>
-        </Row>
+        <div className="container add-margin">
+          <Row>
+            <Col xs={ 12 }>
+              <div className="page-header clearfix">
+                <h4 className="pull-left">Jobs</h4>
+                <Link to="/jobs/new">
+                  <Button bsStyle="success" className="pull-right" >Add a Job</Button>
+                </Link>
+              </div>
+              <DocumentsList />
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }

@@ -1,45 +1,25 @@
-/* NAVBAR OVERRIDE */
+.navbar {
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 0;
+  margin-bottom: 0px !important;
+  position: fixed !important;
+  min-width: 100vw;
+  z-index: 999;
+}
 
-/* DO NOT TOUCH */
-
-.navbar-default .navbar-nav>.active>a,
-.navbar-default .navbar-nav>.active>a:focus,
-.navbar-default .navbar-nav>.active>a:hover {
-    color: $primary-alt !important;
-    background-color: $secondary-color !important;
-    cursor: pointer !important;
+.z-nav-no-bg {
+  background-color: transparent !important;
+  color: transparent !important;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #efefef !important;
-}
+  color: white;
 
-.navbar-default .navbar-nav>li>a:hover {
-  color: $primary-alt !important;
-  cursor: pointer !important;
-}
-
-.navbar {
-  background-color: $secondary-color !important;
-  border: none !important;
-  border-bottom: 1px solid #efefef !important;
-}
-
-.navbar .navbar-default {
-  border-radius: 0 !important;
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0 !important;
+  &:hover {
+    color: $primary-alt;
   }
 }
-
-.navbar-default {
-    background-color: $secondary-color !important;
-    border-color: none !important;
-}
-
 
 /* LOGO OVERRIDE */
 

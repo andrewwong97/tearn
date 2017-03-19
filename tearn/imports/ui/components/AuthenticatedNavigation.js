@@ -25,9 +25,6 @@ const AuthenticatedNavigation = () => (
       </LinkContainer>
     </Nav>
     <Nav pullRight>
-      <NavItem className="flex-img">
-        <div className="profile-img"></div>
-      </NavItem>
       <NavDropdown eventKey={ 3 } title={ userName() } id="basic-nav-dropdown">
         <MenuItem eventKey={ 3.1 } onClick={ myProfile }>My Profile</MenuItem>
         <MenuItem eventKey={ 3.1 } onClick={ handleLogout }>Logout</MenuItem>

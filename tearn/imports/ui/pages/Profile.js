@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 import { Row, Col, Nav, NavItem } from 'react-bootstrap';
-import { Link } from 'react-router'
 import Teacher from './Teacher';
 import Learner from './Learner';
 import Rating from 'react-rating';

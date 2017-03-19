@@ -12,10 +12,12 @@ export default class Index extends React.Component {
   render() {
     return (
       <div className="Index">
-        <Jumbotron className="jumbotron-fluid">
-          <h2>Tearn</h2>
-          <p>Student to student on demand academic help based on the notion that students can be experts in one subject and need help in others.</p>
-          {this.renderModal()}
+        <Jumbotron className="jumbotron vignette">
+          <span className="hero-text">
+            <h2>Tearn</h2>
+            <p>Student to student on demand academic help based on the notion that students can be experts in one subject and need help in others.</p>
+            {this.renderModal()}
+          </span>
         </Jumbotron>
         <br></br>
       </div>

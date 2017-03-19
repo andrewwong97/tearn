@@ -7,7 +7,7 @@ import AuthenticatedNavigation from './AuthenticatedNavigation.js';
 const renderNavigation = hasUser => (hasUser ? <AuthenticatedNavigation /> : <PublicNavigation />);
 
 const AppNavigation = ({ hasUser }) => (
-  <Navbar>
+  <Navbar className="z-nav-no-bg">
     <Navbar.Header>
       <Navbar.Brand>
         <Link to="/">

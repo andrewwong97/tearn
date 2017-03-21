@@ -17,6 +17,25 @@
   border-color: transparent;
 }
 
+.btn.btn-primary {
+  background-color: $white;
+  color: $primary-color;
+  border: none;
+  transition: background-color 200ms ease-in-out;
+  margin-right: .5em;
+  font-size: 14pt;
+
+  &:hover {
+    color: $primary-color;
+    background-color: #efefef;
+  }
+
+  &a:hover {
+    color: black;
+  }
+}
+
+
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {

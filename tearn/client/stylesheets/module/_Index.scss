@@ -4,16 +4,42 @@
     color: white;
   }
 
-
   .jumbotron {
-    background-color: $secondary-color;
+    background: url('splash.jpeg') $secondary-color;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 300px;
-    min-width: 100%;
+    padding: 10px;
+    height: 100vh;
+    width: 100vw;
     color: lighten($primary-color, 25%);
+    text-align: center;
+
+    &:after {
+      -moz-box-shadow: inset 0 0 10em #000;
+      -webkit-box-shadow: inset 0 0 10em #000;
+      box-shadow: inset 0 0 10em #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      content: "";
+    }
   }
-  
+
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    &.LoginModal {
+      overflow: visible !important;
+    }
+  }
+
 }

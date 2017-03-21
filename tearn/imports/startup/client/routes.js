@@ -35,6 +35,7 @@ Meteor.startup(() => {
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } />
         <Route name="myProfile" path="/profile" component={ Profile } onEnter={ authenticate } />
+        <Route name="publicProfile" path="/profile/:_id" component={ Profile } onEnter={ authenticate } />
         <Route name="JobView" path="/jobs" component={ Jobs } onEnter={ authenticate } />
         <Route name="newDocument" path="/jobs/new" component={ NewDocument } onEnter={ authenticate } />
         <Route name="editDocument" path="/jobs/:_id/edit" component={ EditDocument } onEnter={ authenticate } />

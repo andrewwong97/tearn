@@ -5,7 +5,7 @@ import AppNavigation from '../containers/AppNavigation.js';
 const App = ({ children }) => (
   <div>
     <AppNavigation />
-    <Grid>
+    <Grid fluid={true} bsClass="remove-left-right-padding">
       { children }
     </Grid>
   </div>

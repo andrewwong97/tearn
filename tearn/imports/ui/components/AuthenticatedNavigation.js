@@ -18,16 +18,13 @@ const AuthenticatedNavigation = () => (
   <div className="MainNav">
     <Nav>
       <LinkContainer to="/jobs">
-        <NavItem eventKey={ 1 } href="/jobs">My Jobs</NavItem>
+        <NavItem eventKey={ 1 } href="/jobs">All Jobs</NavItem>
       </LinkContainer>
       <LinkContainer to="/profile">
         <NavItem eventKey={ 2 } href="/profile">My Profile</NavItem>
       </LinkContainer>
     </Nav>
     <Nav pullRight>
-      <NavItem className="flex-img">
-        <div className="profile-img"></div>
-      </NavItem>
       <NavDropdown eventKey={ 3 } title={ userName() } id="basic-nav-dropdown">
         <MenuItem eventKey={ 3.1 } onClick={ myProfile }>My Profile</MenuItem>
         <MenuItem eventKey={ 3.1 } onClick={ handleLogout }>Logout</MenuItem>

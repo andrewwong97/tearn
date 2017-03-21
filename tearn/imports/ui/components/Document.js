@@ -1,5 +1,5 @@
 import React from 'react';
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import { Panel } from 'react-bootstrap';
 import { removeDocument } from '../../api/documents/methods.js';
 
@@ -8,13 +8,15 @@ export default class Document extends React.Component {
     super(props);
     this.handleRemove = this.handleRemove.bind(this);
     this.state = {
-      open: null
+      open: null,
+      isOwner: null
     };
   }
 
   componentWillMount() {
     this.setState({
-      open: false
+      open: false,
+      isOwner: this.isOwner()
     });
   }
 
@@ -30,24 +32,49 @@ export default class Document extends React.Component {
     }
   }
 
+  getUser(_id) {
+    const user = Meteor.users.findOne(_id); // TODO: fix, doesn't work on client side
+    const profile = user && user.profile ? user.profile : 'undefined';
+    return profile && profile.name && profile.name.first ? profile.name.first : 'undefined';
+  }
+
+  isOwner() {
+    return this.props.student === Meteor.user()._id ? 'visible' : 'collapse';
+  }
+
+
+  // TODO: title, body overflow UX
   render() {
     return (
       <div className="Document" key={ this.props._id }>
-        <li className="job" onClick={() => this.setState({open: !this.state.open})}>
-          { this.props.title }
-          <span id="delete" aria-hidden="true" onClick={ (e) => {
+        <li className="job">
+            <span className="title">
+              { this.props.title }
+            </span>
+
+            <Panel collapsible className="job-body"
+              style={{'visibility': this.state.open ? 'visible' : 'collapse'}}
+              expanded={this.state.open}>
+              { this.props.body }
+            </Panel>
+
+            <Link className="author" to="/profile">by user { this.getUser(this.props.student) }</Link>
+
+            <span id="delete"
+              aria-hidden="true" onClick={ (e) => {
               e.stopPropagation();
               this.handleRemove(this.props._id);
-            }}>&times;</span>
+              }}
+              style={{'visibility': this.state.isOwner}}>
+            &times;</span>
+            <span id="expand"
+              aria-hidden="true" onClick={ (e) => {
+              e.stopPropagation();
+              this.setState({open: !this.state.open});
+              }}>
+              &#43;</span>
         </li>
 
-
-        {console.log(this.state.open)}
-        <Panel collapsible
-          style={{'visibility': this.state.open ? 'visible' : 'collapse'}}
-          expanded={this.state.open}>
-          { this.props.body }
-        </Panel>
       </div>
     );
   }

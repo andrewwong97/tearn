@@ -5,7 +5,10 @@
 
 .Signup {
   font-family: $font-stack;
-  form + p {
+  p {
+    font-size: 12pt;
+  }
+  form p {
     margin-top: 20px;
   }
   label {

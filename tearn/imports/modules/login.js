@@ -22,7 +22,7 @@ const login = () => {
       if (location.state && location.state.nextPathname) {
         browserHistory.push(location.state.nextPathname);
       } else {
-        browserHistory.push('/');
+        browserHistory.push('/profile');
       }
     }
   });

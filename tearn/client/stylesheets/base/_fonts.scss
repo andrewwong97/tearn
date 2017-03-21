@@ -1,5 +1,6 @@
 // Imports
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 // Normal font
 @font-face {
@@ -22,6 +23,10 @@ $font-stack: "Source Sans Pro", "Circular Std", -apple-system, BlinkMacSystemFon
 
 html, body, h1, h2, h3, h4, h5, h6, a, p, button, input, form, footer {
   font-family: $font-stack !important;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .fa-star, .fa-star-o, .fa-star-half {

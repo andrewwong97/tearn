@@ -10,11 +10,8 @@ export default class Signup extends React.Component {
   }
 
   render() {
-    let tags = this.state.tags;
-    let suggestions = this.state.suggestions;
     return (
       <div className="Signup">
-<<<<<<< HEAD
         <Row className="signup-container">
           <Col xs={ 12 } sm={ 10 } md={ 10 } smOffset={ 1 } mdOffset={ 1 }>
             <form
@@ -100,17 +97,12 @@ export default class Signup extends React.Component {
                 />
               </FormGroup>
               <section className= "app">
-                <Tokenizer
-              tokens={this.state.tokens}
-              tokenize={this._tokenize}
-              removeToken={this._removeToken} />
               </section>
               <Button type="submit" bsStyle="success">Sign Up</Button>
               <p>Already have an account? <Link to="/login">Log In</Link>.</p>
             </form>
           </Col>
         </Row>
-=======
         <div className="container add-margin">
           <Row className="signup-container">
             <Col xs={ 12 } sm={ 10 } md={ 10 } smOffset={ 1 } mdOffset={ 1 }>
@@ -202,7 +194,7 @@ export default class Signup extends React.Component {
             </Col>
           </Row>
         </div>
->>>>>>> da25f5d57c3a42e83fb6ea7d6ea60de630594081
+
       </div>
     );
   }

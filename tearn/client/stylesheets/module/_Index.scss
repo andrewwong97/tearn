@@ -37,8 +37,34 @@
     transform: translate(-50%, -50%);
     z-index: 100;
 
+    display: block;
+
     &.LoginModal {
       overflow: visible !important;
+    }
+  }
+
+  .btn.btn-primary {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 500;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .btn.btn-primary {
+      top: 80%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .btn.btn-primary {
+      top: 85%;
     }
   }
 

@@ -16,7 +16,7 @@
     color: lighten($primary-color, 25%);
     text-align: center;
 
-    &:after {
+    &:after { // vignette
       -moz-box-shadow: inset 0 0 10em #000;
       -webkit-box-shadow: inset 0 0 10em #000;
       box-shadow: inset 0 0 10em #000;

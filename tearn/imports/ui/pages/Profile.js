@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import { Row, Col, Nav, NavItem } from 'react-bootstrap';
+import { Button, Row, Col, Nav, NavItem } from 'react-bootstrap';
 import Teacher from '../components/Teacher.js';
 import Learner from '../components/Learner.js';
 import Rating from 'react-rating';
@@ -52,16 +52,15 @@ export default class Profile extends React.Component {
     return (
       <div className="Profile">
         <div className="container add-margin">
-          <Col xs={10} xsOffset={1} sm={10} smOffset={1} md={5} mdOffset={0}>
-            <div className="profile-container">
-              <h1>{this.getUsername()}</h1>
-              <Nav className="profile-nav" bsStyle="pills" activeKey={this.state.activeKey} onSelect={this.handleSelect.bind(this)}>
-                <NavItem bsStyle="btn btn-success" eventKey={1}>Teacher</NavItem>
-                <NavItem bsStyle="btn btn-success" eventKey={2}>Learner</NavItem>
-              </Nav>
-            </div>
+          <Col className="left" xs={10} xsOffset={1} sm={10} smOffset={1} md={5} mdOffset={0}>
+            <h1>{this.getUsername()}</h1>
+            <Nav className="profile-nav" bsStyle="pills" activeKey={this.state.activeKey} onSelect={this.handleSelect.bind(this)}>
+              <NavItem bsStyle="btn btn-success" eventKey={1}>Teacher</NavItem>
+              <NavItem bsStyle="btn btn-success" eventKey={2}>Learner</NavItem>
+            </Nav>
             <div className="profile-img">
               <img src="profile.png" />
+              <Button bsStyle="success">Edit</Button>
             </div>
             <div className="details">
               <h2>{Meteor.user().profile.school.school}</h2>

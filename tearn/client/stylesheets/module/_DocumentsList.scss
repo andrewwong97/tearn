@@ -4,18 +4,13 @@
   padding-left: 0;
 
   display: flex;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-flow: row;
   flex-flow: row wrap;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
+  flex: 2;
 
-  .Document {
-    width: 100%;
-  }
+  // include cross browser support! maybe get a plugin to do that
+  // https://modernizr.com/
 
   .panel-collapse.collapse {
     border: none !important;
@@ -26,74 +21,78 @@
   }
 
   #delete{
-    color: $primary-alt;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: lighten($secondary-color, 10%);
     font-size: 20pt;
     font-weight: 400;
+    transition: color 200ms ease-in-out;
   }
 
   #delete:hover {
-    color: lighten($primary-alt, 10%);
+    color: lighten($secondary-color, 20%);
     cursor: pointer;
   }
 
-  .job {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  #expand {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    color: lighten(#2ecc71, 10%);
+    font-size: 20pt;
+    font-weight: 400;
+    transition: color 200ms ease-in-out;
+  }
 
+  .job {
+    position: relative;
     text-decoration: none;
     list-style: none;
     font-size: 16pt;
     font-weight: 300;
     color: white;
-    width: 100%;
-    padding: 10px 15px;
+    padding: 35px 15px;
+    margin: 10px 25px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
     border-radius: 3px;
-    background: linear-gradient(to bottom, lighten($secondary-color,10%) 50%, lighten($secondary-color, 15%));
+    background: linear-gradient(to bottom, lighten($primary-color,10%) 50%, lighten($primary-color, 15%));
     transition: box-shadow 100ms ease-in;
-    margin-bottom: 10px;
-  }
 
-  .job:hover {
-    box-shadow: inset -1px 2px 7px rgba(0,0,0,0.15), 0 0 8px transparentize($secondary-color, .4);
-    cursor: pointer;
-  }
-
-  .job-details {
-    text-align: left;
-
-    a {
-      margin-left: 10px;
-      text-decoration: none;
-      color: $primary-alt;
-      transition: color 200ms ease-in;
+    &:hover {
+      box-shadow: inset -1px 2px 7px rgba(0,0,0,0.1), 0 0 8px transparentize($primary-color, .4);
+      cursor: pointer;
     }
+  }
 
-    a:hover {
+  a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: $primary-alt;
+    transition: color 200ms ease-in;
+
+    &:hover {
       color: #f5f5ff;
     }
-
-    /*
-    .sliding {
-      display: inline-block;
-      position: relative;
-    }
-
-    .sliding:after {
-      content: '';
-      display: block;
-      margin: auto;
-      height: 2px;
-      background-color: $primary-alt;
-      margin-top: 2px;
-      width: 0%;
-      border-radius: 1px;
-      transition: width 200ms ease-in;
-    }
-
-    .sliding:hover:after {
-      content: '';
-      width:100%;
-    }*/
   }
+
+  .author {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .title {
+    font-weight: 300;
+    font-family: "Roboto";
+  }
+
+  .job-body {
+    color: white;
+    background: lighten($primary-color, 15%);
+    border: lighten($primary-color, 15%);
+  }
+
+
 }

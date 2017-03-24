@@ -32,7 +32,7 @@ export default class Document extends React.Component {
     }
   }
 
-  getName(_id){
+  getUser(_id){
       var name = null;
       const subscription = Meteor.subscribe('allusers');
       name = Meteor.apply('getUsers', [_id], {returnStubValue:true });
@@ -45,19 +45,6 @@ export default class Document extends React.Component {
     return this.props.student === Meteor.user()._id ? 'visible' : 'collapse';
   }
 
-<<<<<<< HEAD
-  
-    render() {
-    return (
-      <div className="Document" key={ this.props._id }>
-        <li className="job" onClick={() => this.setState({open: !this.state.open})}>
-          <div className="job-details">
-            { this.props.title }
-            <Link className="sliding" to="/profile">by user { this.getName(this.props.student)}</Link>
-          </div>
-=======
-
-  // TODO: title, body overflow UX
   render() {
     return (
       <div className="Document" key={ this.props._id }>
@@ -73,7 +60,6 @@ export default class Document extends React.Component {
             </Panel>
 
             <Link className="author" to="/profile">by user { this.getUser(this.props.student) }</Link>
->>>>>>> da25f5d57c3a42e83fb6ea7d6ea60de630594081
 
             <span id="delete"
               aria-hidden="true" onClick={ (e) => {

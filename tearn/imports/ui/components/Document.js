@@ -32,18 +32,19 @@ export default class Document extends React.Component {
     }
   }
 
-  getUser(_id) {
-    const user = Meteor.users.findOne(_id); // TODO: fix, doesn't work on client side
-    const profile = user && user.profile ? user.profile : 'undefined';
-    return profile && profile.name && profile.name.first ? profile.name.first : 'undefined';
+  getUser(_id){
+      var name = null;
+      const subscription = Meteor.subscribe('allusers');
+      name = Meteor.apply('getUsers', [_id], {returnStubValue:true });
+      console.log("this is the name:"+subscription);
+      return name;
+    
+    
   }
-
   isOwner() {
     return this.props.student === Meteor.user()._id ? 'visible' : 'collapse';
   }
 
-
-  // TODO: title, body overflow UX
   render() {
     return (
       <div className="Document" key={ this.props._id }>

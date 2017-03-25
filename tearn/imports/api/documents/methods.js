@@ -3,6 +3,7 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import Documents from './documents';
 import rateLimit from '../../modules/rate-limit.js';
 
+
 export const upsertDocument = new ValidatedMethod({
   name: 'documents.upsert',
   validate: new SimpleSchema({
@@ -34,3 +35,14 @@ rateLimit({
   limit: 5,
   timeRange: 1000,
 });
+
+Meteor.methods({
+  getUsers: function (_id) {
+    //Meteor.subscribe('allusers')
+    check(_id, String);
+    console.log(_id);
+    const user = Accounts.users.findOne(_id); // TODO: fix, doesn't work on client side
+    const profile = user && user.profile ? user.profile : 'undefined';
+    return profile.name.first;
+    
+  }});

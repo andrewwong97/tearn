@@ -26,17 +26,29 @@ Documents.schema = new SimpleSchema({
     type: String,
     label: 'The body of the document.',
   },
-  student: {
+  owner: {
     type: String,
     label: 'Student Id',
   },
-
+  isActive: {
+    type: Boolean,
+    label: 'Whether it is displayed on all jobs',
+    defaultValue: true
+  },
+  acceptedBy: {
+    type: String, // [String] if we want it to be array
+    label: 'IDs of teacher who accepted the job',
+    optional: true
+  }
 });
 
 Documents.attachSchema(Documents.schema);
 
+// For fixture data
 Factory.define('document', Documents, {
   title: () => 'Factory Title',
   body: () => 'Factory Body',
-  student: () => 'Factory student',
+  owner: () => 'Factory student',
+  isActive: true,
+  acceptedBy: 'Factory student'
 });

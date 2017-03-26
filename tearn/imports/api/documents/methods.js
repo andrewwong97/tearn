@@ -10,10 +10,12 @@ export const upsertDocument = new ValidatedMethod({
     _id: { type: String, optional: true },
     title: { type: String, optional: true },
     body: { type: String, optional: true },
-    student: { type: String},
+    owner: { type: String, optional: true },
+    isActive: { type: Boolean, optional: true, defaultValue: true },
+    acceptedBy: { type: String, optional: true }
   }).validator(),
   run(document) {
-    return Documents.upsert({ _id: document._id }, { $set: document });
+    return Documents.upsert({ _id: document._id,  owner: Meteor.userId(), isActive: true }, { $set: document });
   },
 });
 
@@ -44,5 +46,5 @@ Meteor.methods({
     const user = Accounts.users.findOne(_id); // TODO: fix, doesn't work on client side
     const profile = user && user.profile ? user.profile : 'undefined';
     return profile.name.first;
-    
+
   }});

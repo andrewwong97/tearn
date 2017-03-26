@@ -13,9 +13,9 @@ const handleUpsert = () => {
   const upsert = {
     title: document.querySelector('[name="title"]').value.trim(),
     body: document.querySelector('[name="body"]').value.trim(),
-    student: Meteor.userId(),
+    owner: Meteor.userId(),
+    isActive: true,
   };
-  console.log(Meteor.userId());
   if (doc && doc._id) upsert._id = doc._id;
 
   upsertDocument.call(upsert, (error, response) => {
@@ -37,21 +37,15 @@ const validate = () => {
       },
       body: {
         required: true,
-      },
-      student: {
-        required: true,
-      },
+      }
     },
     messages: {
       title: {
-        required: 'Need a title in here, Seuss.',
+        required: 'Need a question in here.',
       },
       body: {
         required: 'This needs a body, please.',
-      },
-      student: {
-        required: 'this is here',
-      },
+      }
     },
     submitHandler() { handleUpsert(); },
   });

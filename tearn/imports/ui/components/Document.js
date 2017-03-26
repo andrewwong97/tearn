@@ -38,11 +38,11 @@ export default class Document extends React.Component {
       name = Meteor.apply('getUsers', [_id], {returnStubValue:true });
       console.log("this is the name:"+subscription);
       return name;
-    
-    
+
+
   }
   isOwner() {
-    return this.props.student === Meteor.user()._id ? 'visible' : 'collapse';
+    return this.props.owner === Meteor.user()._id ? 'visible' : 'collapse';
   }
 
   render() {
@@ -59,7 +59,7 @@ export default class Document extends React.Component {
               { this.props.body }
             </Panel>
 
-            <Link className="author" to="/profile">by user { this.getUser(this.props.student) }</Link>
+            <Link className="author" to="/profile">by user { this.getUser(this.props.owner) }</Link>
 
             <span id="delete"
               aria-hidden="true" onClick={ (e) => {

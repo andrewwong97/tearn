@@ -9,14 +9,15 @@
   }
 
   .left {
-    background: #424242;
+    // background: #424242;
     padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    border: 1px solid #cccccc;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, .1);
     border-radius: 10px;
     text-align: center;
-    color: #fafafa
+    // color: #fafafa
   }
 
   .profile-img button {

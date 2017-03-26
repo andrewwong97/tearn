@@ -1,37 +1,43 @@
+.btn {
+  transition: transform 300ms ease-in;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
 .btn.btn-success {
   background-color: $primary-color !important;
   color: $white !important;
   border-color: transparent;
-  transition: background-color 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background-color: $secondary-color !important;
+    border-color: transparent;
+  }
 }
 
-.btn-success {
-  background-color: $primary-color !important;
-  border-color: transparent;
-}
-
-.btn.btn-success:hover, .btn.btn-success:focus,
-.btn.btn-success:active, .btn-success:hover,
-.btn-success:focus, .btn-success:active  {
-  background-color: #4da6ff !important;
-  border-color: transparent;
-}
 
 .btn.btn-primary {
   background-color: $white;
-  color: $primary-color;
-  border: none;
-  transition: background-color 200ms ease-in-out;
-  margin-right: .5em;
-  font-size: 14pt;
+  border-color: transparent !important;
+  transition: all 200ms ease-in-out;
+  font-size: 13pt;
 
   &:hover {
-    color: $primary-color;
-    background-color: #efefef;
+    background-color: $primary-color;
+    a {
+      color: white;
+    }
   }
 
-  &a:hover {
-    color: black;
+  a {
+    color: $primary-color;
   }
 }
 

@@ -1,4 +1,4 @@
-/* eslint-disable max-len, no-return-assign */
+ /* eslint-disable max-len, no-return-assign */
 
 import React from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';

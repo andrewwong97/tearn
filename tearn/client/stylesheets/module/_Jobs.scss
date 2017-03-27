@@ -6,8 +6,12 @@
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: left;
   flex: 2;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 
   // include cross browser support! maybe get a plugin to do that
   // https://modernizr.com/
@@ -65,22 +69,28 @@
       box-shadow: inset -1px 2px 7px rgba(0,0,0,0.1), 0 0 8px transparentize($primary-color, .4);
       cursor: pointer;
     }
-  }
 
-  a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: $primary-alt;
-    transition: color 200ms ease-in;
+    .accept, .edit {
+      position: absolute;
+      left: 50%;
+      top: 80%;
+      transform: translate(-50%, -50%);
+    }
 
-    &:hover {
-      color: #f5f5ff;
+    a {
+      color: white;
     }
   }
 
   .author {
+    text-decoration: none;
+    color: $primary-alt !important;
+    transition: color 200ms ease-in;
     display: block;
-    margin-top: 10px;
+
+    &:hover {
+      color: #f5f5ff !important;
+    }
   }
 
   .title {

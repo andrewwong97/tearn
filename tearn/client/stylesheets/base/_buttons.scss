@@ -19,6 +19,11 @@
   &:hover {
     background-color: $secondary-color !important;
     border-color: transparent;
+    box-shadow: 1px 1px 8px rgba(0,0,0,.25);
+  }
+
+  &:focus, &:active {
+    border-color: transparent;
   }
 }
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { browserHistory, Link } from 'react-router';
 import { Button, Panel } from 'react-bootstrap';
-import { removeDocument } from '../../api/documents/methods.js';
+import { removeDocument, acceptJob } from '../../api/documents/methods.js';
 
 export default class Document extends React.Component {
   constructor(props) {
     super(props);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleAccept = this.handleAccept.bind(this);
     this.state = {
       open: null,
       isOwner: null
@@ -36,26 +37,35 @@ export default class Document extends React.Component {
       var name = null;
       const subscription = Meteor.subscribe('allusers');
       name = Meteor.apply('getUsers', [_id], {returnStubValue:true });
-      console.log("this is the name:"+subscription);
+      // console.log("this is the name:"+subscription);
       return name;
-
-
   }
 
   isOwner() {
     return this.props.owner === Meteor.userId() ? true : false;
   }
 
-  handleAccept() {
+  handleAccept(_id) {
     // set acceptedBy the current Meteor.userId()
-    // create a pub sub to jobs acceptedBy the current Meteor.userId()
-    // this is displayed in private profile
+    var teacherid = Meteor.userId();
+    acceptJob.call({_id, teacherid}, (error) => {
+      if (error) {
+        console.log("Error accepting job")
+      } else {
+        console.log(`User ${this.getUser(teacherid)} accepted job ${this.props.title}.`);
+      }
+    });
   }
 
   renderAccept() {
     if (!this.state.isOwner) {
       return <Button className="accept"
-        bsStyle="success">Accept</Button>;
+        bsStyle="success"
+        onClick={ (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.handleAccept(this.props._id)
+          }}>Accept</Button>;
     } else if (this.state.isOwner) {
       return <Button className="edit"
         bsStyle="success"><Link to={`/jobs/${this.props._id}/edit`}>Edit</Link></Button>;

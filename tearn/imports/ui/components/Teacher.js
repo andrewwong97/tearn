@@ -7,6 +7,7 @@ import { Link } from 'react-router';
 export default class Teacher extends React.Component {
   constructor(props) {
     super(props);
+    const subscription = Meteor.subscribe("teacherAcceptedJobs", Meteor.userId());
   }
 
   render() {

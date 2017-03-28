@@ -29,12 +29,24 @@ export const removeDocument = new ValidatedMethod({
   },
 });
 
+export const acceptJob = new ValidatedMethod({
+  name: 'documents.accept',
+  validate: new SimpleSchema({
+    _id: { type:String },
+    teacherid: {type: String}
+  }).validator(),
+  run({ _id,teacherid }) {
+    Documents.update(_id, {$set: {acceptedBy: teacherid}});
+  }
+})
+
 rateLimit({
   methods: [
     upsertDocument,
     removeDocument,
+    acceptJob
   ],
-  limit: 5,
+  limit: 2,
   timeRange: 1000,
 });
 

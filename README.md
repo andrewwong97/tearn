@@ -1,5 +1,7 @@
 # Tearn [![Build Status](https://travis-ci.com/andrewwong97/tearn.svg?token=Du5Ucyp2pSQjddWdX9YH&branch=master)](https://travis-ci.com/andrewwong97/tearn)
 
+### Student to student on demand academic help based on the notion that students can be experts in one subject and need help in others.
+
 <img width="1194" alt="screenshot 2017-09-02 20 48 08" src="https://user-images.githubusercontent.com/7339169/29999691-7bf35556-9020-11e7-97c5-0d8b13f9324d.png">
 
 <img width="1162" alt="screenshot 2017-09-02 20 48 28" src="https://user-images.githubusercontent.com/7339169/29999692-7bf522d2-9020-11e7-80ee-995a27094279.png">
